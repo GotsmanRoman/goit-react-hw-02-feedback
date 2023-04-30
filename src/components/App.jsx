@@ -1,4 +1,4 @@
-import { Feedback } from './Feedback/Main/Main';
+import { Feedback } from './Main/Main';
 //import feedback from '../feedback.json';
 
 export const App = () => {
