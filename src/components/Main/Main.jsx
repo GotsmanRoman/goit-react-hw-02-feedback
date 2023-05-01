@@ -35,33 +35,27 @@ export class Feedback extends React.Component {
     const { good, neutral, bad } = this.state;
     return (
       <Container>
-        <Section
-          title={'Please leave feedback'}
-          children={
-            <FeedbackOptions
-              options={Object.keys(this.state)}
-              onLeaveFeedback={this.makeVote}
-              countTotalFeedback={() => {
-                this.countTotalFeedback();
-              }}
-            />
-          }
-        />
+        <Section title={'Please leave feedback'}>
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.makeVote}
+            countTotalFeedback={() => {
+              this.countTotalFeedback();
+            }}
+          />
+        </Section>
         {total === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
-          <Section
-            title={'Statistic'}
-            children={
-              <Statistics
-                good={good}
-                neutral={neutral}
-                bad={bad}
-                total={total}
-                positivePercentage={positive}
-              />
-            }
-          />
+          <Section title={'Statistic'}>
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positive}
+            />
+          </Section>
         )}
       </Container>
     );
